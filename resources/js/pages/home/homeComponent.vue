@@ -1,0 +1,50 @@
+<template>
+    <div class="padding">
+        <div class="row">
+            <div class="col m12 s12 mt">
+                <h3 class="center-align" > ¡ Bienvenido ! {{ getNameUser ? getNameUser : "" }} </h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col m12 s12 center-align">
+                <all-event-component />
+            </div>
+        </div>  
+    </div>
+</template>
+
+<script>
+import { mapGetters, mapActions } from 'vuex'
+export default {
+    name: "Home",
+    mounted() {
+        this.getUser()
+    },
+    methods: {
+        ...mapActions(['getUser']),
+    },
+    computed: {
+        ...mapGetters(['getNameUser'])
+    }
+}
+</script>
+
+<style scoped>
+
+.mt{
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+.padding{
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 100px;
+    font-family: "Nunito", Times, serif;
+}
+.imagen-portada{ width: 400px; }
+.section-imagen{
+    display: flex;
+    align-items: center;
+    height: 40vh;
+}
+</style>
