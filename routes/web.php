@@ -5,9 +5,11 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Moderator\ModeratorController;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', function () { return view('welcome'); });
+Route::get('/event', function () { return view('welcome'); });
+Route::get('/question-answer', function () { return view('welcome'); });
+Route::get('/report', function () { return view('welcome'); });
+Route::get('/my-question', function () { return view('welcome'); });
 
 Auth::routes();
 Route::get('/all/events', [HomeController::class, 'index'])->name('home');

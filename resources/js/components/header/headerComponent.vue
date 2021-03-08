@@ -101,7 +101,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 export default {
   props: ['route'],
   name: "Header",
@@ -124,10 +124,14 @@ export default {
         console.log(error)
       }
     },
+    ...mapActions(['getUser']),
   },
   computed: {
     ...mapGetters(['getRoleUser'])
-  }
+  },
+  mounted() {
+    this.getUser()
+  },
 };
 </script>
 

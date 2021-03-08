@@ -14,15 +14,9 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex'
+import { mapGetters } from 'vuex'
 export default {
     name: "Home",
-    mounted() {
-        this.getUser()
-    },
-    methods: {
-        ...mapActions(['getUser']),
-    },
     computed: {
         ...mapGetters(['getNameUser'])
     }
