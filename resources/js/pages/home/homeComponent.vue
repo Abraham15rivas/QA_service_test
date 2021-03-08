@@ -31,10 +31,6 @@ export default {
 
 <style scoped>
 
-.mt{
-    margin-top: 25px;
-    margin-bottom: 20px;
-}
 .padding{
     padding-left: 50px;
     padding-right: 50px;
