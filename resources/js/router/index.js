@@ -2,6 +2,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import homeComponent from '../pages/home/homeComponent.vue'
+import createEventComponent from '../pages/event/createEventComponent.vue'
 // asignar
 Vue.use(VueRouter)
 // rutas
@@ -16,6 +17,12 @@ const routes = [
         path: '/home',
         name: 'Home',
         component: homeComponent,
+        props: true
+    },
+    {
+        path: '/event',
+        name: 'Event',
+        component: createEventComponent,
         props: true
     }
 ]

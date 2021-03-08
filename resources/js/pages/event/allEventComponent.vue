@@ -8,10 +8,49 @@
                     </div>
 
                     <div class="card-body">
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas tenetur provident commodi consequatur saepe facilis ratione eaque aperiam ab quasi ullam, voluptatibus dolores dolore nostrum dignissimos eos. Eaque, totam fuga.</p>
+                        <ul v-if="events != null && events.length > 0">
+                            <li v-for="(event, index) of events" :key="index">
+                                <p v-text="event.title"></p>
+                                <p v-text="event.slug"></p>
+                                <p v-text="'Miniatura'"></p>
+                                <img :src="`storage/${ event.image }`" alt="" width="20%">
+                                <button class="btn btn-success">Ver</button>
+                                <br>
+                                <hr>
+                            </li>
+                        </ul>
+                        <h5 v-else>
+                            <b>No hay eventos para mostrar</b>
+                        </h5>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </template>
+
+<script>
+export default {
+    data() {
+        return {
+            events: []
+        }
+    },
+    methods: {
+        async getEvents() {
+            try {
+                let url = `/all/events`
+                const responses = await axios.get(url);
+                if(responses.data) {
+                    this.events = responses.data
+                }                
+            } catch (error) {
+                console.log(error)
+            }
+        }
+    },
+    mounted() {
+        this.getEvents()
+    }
+}
+</script>

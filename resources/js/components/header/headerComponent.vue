@@ -50,7 +50,7 @@
             </li>
             <li class="waves-effect" v-if="getRoleUser == 2">
               <router-link
-                to="/guest-client"
+                to="/my-question"
                 class="collapsible-header"
                 tabindex="0"
               >
@@ -59,7 +59,7 @@
             </li>
             <li class="waves-effect" v-if="getRoleUser == 1">
               <router-link
-                to="/reservation-client"
+                to="/event"
                 class="collapsible-header"
                 tabindex="0"
               >
@@ -68,7 +68,7 @@
             </li>
             <li class="waves-effect" v-if="getRoleUser == 1">
               <router-link
-                to="/reservation-client"
+                to="/question-answer"
                 class="collapsible-header"
                 tabindex="0"
               >
@@ -77,20 +77,20 @@
             </li>
             <li class="waves-effect" v-if="getRoleUser == 1">
               <router-link
-                to="/reservation-client"
+                to="/report"
                 class="collapsible-header"
                 tabindex="0"
               >
                 Reportes<i class="material-icons">description</i>
               </router-link>
             </li>
-            <li class="waves-effect">
+            <li class="waves-effect" @click="logout">
               <router-link
                 to="/"
                 class="collapsible-header"
                 tabindex="0"
               >
-                <a @click="logout">Cerrar sesión</a><i class="material-icons">logout</i>
+                Cerrar sesión<i class="material-icons">logout</i>
               </router-link>
             </li>
           </ul>

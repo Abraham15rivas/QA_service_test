@@ -17,7 +17,7 @@ class CreateEventsTable extends Migration
             $table->id();
             $table->string('title');
             $table->string('slug');
-            $table->longText('description');
+            $table->longText('description')->nullable();
             $table->string('image')->nullable();
             $table->string('video')->nullable();
             $table->boolean('qa')->default(true);

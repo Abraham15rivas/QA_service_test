@@ -43,3 +43,12 @@ p {
 .wrapper {
     min-height: calc(100% - 4rem);
 }
+
+.mt{
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+
+.mb {
+    margin-bottom: 100px;
+}
