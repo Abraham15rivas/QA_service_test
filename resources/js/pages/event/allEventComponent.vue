@@ -1,7 +1,7 @@
 <template>
     <div class="container-fluid">
         <div class="row justify-content-center">
-            <div class="col-md-12">
+            <div class="col-md-12 mt mb">
                 <div class="card">
                     <div class="card-header text-center backcolor">
                         <h5>Lista de eventos</h5>
@@ -13,8 +13,8 @@
                                 <p v-text="event.title"></p>
                                 <p v-text="event.slug"></p>
                                 <p v-text="'Miniatura'"></p>
-                                <img :src="`storage/${ event.image }`" alt="" width="20%">
-                                <button class="btn btn-success">Ver</button>
+                                <img :src="`/storage/${ event.image }`" alt="" width="20%">
+                                <button @click="redirect(event.id, index)" class="btn btn-success">Ver</button>
                                 <br>
                                 <hr>
                             </li>
@@ -31,12 +31,28 @@
 
 <script>
 export default {
+    props: ['user'],
     data() {
         return {
             events: []
         }
     },
     methods: {
+        redirect(id, index) {
+            if(this.user != undefined && this.user == 'guest') {
+                let anchor = document.createElement('a')
+                anchor.href = `/event/${id}/?guest=true`
+                anchor.click()
+            } else {
+                this.$router.push({ 
+                name: 'AnEvent', 
+                params: {
+                        id,
+                        event: this.events[index]
+                    }
+                })
+            }
+        },
         async getEvents() {
             try {
                 let url = `/all/events`

@@ -37,6 +37,16 @@ export default new Vuex.Store({
             if(state.user) {
                 return state.user.name
             }
+        },
+        getIdUser(state) {
+            if(state.user) {
+                return state.user.id
+            }
+        },
+        getEmailUser(state) {
+            if(state.user) {
+                return state.user.email
+            }
         }
     },
     modules:{}

@@ -17,7 +17,7 @@
             <div class="brand-logo linea">
               <img
                 class="circle-nav"
-                src="images/default.png"
+                src="/images/default.png"
                 alt=""
               />
             </div>            
@@ -31,7 +31,7 @@
       >
         <li>
           <div class="logo-container" style="padding:20px">
-            <img src="images/logo.png" class="logo-sidebar" />
+            <img src="/images/logo.png" class="logo-sidebar" />
           </div>
         </li>
         <li>

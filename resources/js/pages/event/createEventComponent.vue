@@ -25,7 +25,7 @@
                         <img v-if="image" :src="preview" alt="vista previa" width="10%">
                         <br>
                         <label for="video">Url Vídeo</label>
-                        <input type="url" id="video" v-model="video" class="form-control">
+                        <input type="url" id="video" v-model="video" class="form-control" required>
                         <label for="category">Opciones</label>
                         <div>
                             <md-checkbox v-model="qa">Permitir preguntas</md-checkbox>
@@ -35,41 +35,45 @@
                     </form>
                     <button type="buttton" class="btn center-align green" v-if="edit" @click="putEvent">Guardar</button>
                 </div>
-                <md-table class="mt mb" v-else>
-                    <md-table-row>
-                        <md-table-head md-numeric>ID</md-table-head>
-                        <md-table-head>Titulo</md-table-head>
-                        <md-table-head>Slug</md-table-head>
-                        <md-table-head>Descripcción</md-table-head>
-                        <md-table-head>Miniatura</md-table-head>
-                        <md-table-head>Vídeo</md-table-head>
-                        <md-table-head>Permitir preguntas</md-table-head>
-                        <md-table-head>Publicar</md-table-head>
-                        <md-table-head>Acciones</md-table-head>
-                    </md-table-row>
-                    <md-table-row v-for="(event, index) in events" :key="index">
-                        <md-table-cell md-numeric>{{ index + 1 }}</md-table-cell>
-                        <md-table-cell>{{ event.title }}</md-table-cell>
-                        <md-table-cell>{{ event.slug }}</md-table-cell>
-                        <md-table-cell>{{ event.description }}</md-table-cell>
-                        <md-table-cell>
-                            <img v-if="event.image" :src="`storage/${ event.image }`" alt="vista previa">
-                        </md-table-cell>
-                        <md-table-cell>{{ event.video }}</md-table-cell>
-                        <md-table-cell>{{ event.qa ? 'Si' : 'No' }}</md-table-cell>
-                        <md-table-cell>{{ event.status? 'Si' : 'No' }}</md-table-cell>
-                        <md-table-cell>
-                            <button class="btn btn-small blue" @click="editEvent(index)">Editar</button>
-                            <button class="btn btn-small red" @click="delEvent(event.id)">Eliminar</button>
-                        </md-table-cell>
-                    </md-table-row>
-                </md-table>
+                <div v-else>
+                    <md-table class="mt mb" v-if="events.length > 0">
+                        <md-table-row>
+                            <md-table-head md-numeric>ID</md-table-head>
+                            <md-table-head>Titulo</md-table-head>
+                            <md-table-head>Slug</md-table-head>
+                            <md-table-head>Descripcción</md-table-head>
+                            <md-table-head>Miniatura</md-table-head>
+                            <md-table-head>Vídeo</md-table-head>
+                            <md-table-head>Permitir preguntas</md-table-head>
+                            <md-table-head>Publicar</md-table-head>
+                            <md-table-head>Acciones</md-table-head>
+                        </md-table-row>
+                        <md-table-row v-for="(event, index) in events" :key="index">
+                            <md-table-cell md-numeric>{{ index + 1 }}</md-table-cell>
+                            <md-table-cell>{{ event.title }}</md-table-cell>
+                            <md-table-cell>{{ event.slug }}</md-table-cell>
+                            <md-table-cell>{{ event.description }}</md-table-cell>
+                            <md-table-cell>
+                                <img v-if="event.image" :src="`storage/${ event.image }`" alt="vista previa">
+                            </md-table-cell>
+                            <md-table-cell>{{ event.video }}</md-table-cell>
+                            <md-table-cell>{{ event.qa ? 'Si' : 'No' }}</md-table-cell>
+                            <md-table-cell>{{ event.status? 'Si' : 'No' }}</md-table-cell>
+                            <md-table-cell>
+                                <button class="btn btn-small blue" @click="editEvent(index)">Editar</button>
+                                <button class="btn btn-small red" @click="delEvent(event.id)">Eliminar</button>
+                            </md-table-cell>
+                        </md-table-row>
+                    </md-table>
+                    <h4 class="text-center" v-else>No hay datos para mostrar</h4>
+                </div>
             </div>
         </div>
     </div>
 </template>
 
 <script>
+import Swal from "sweetalert2"
 export default {
     data() {
         return {
@@ -158,6 +162,13 @@ export default {
                 if (response.data) {
                     this.getEvents()
                     this.clear()
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Evento guardado correctamente',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
                 }                
             } catch (error) {
                 console.log(error)
@@ -179,6 +190,13 @@ export default {
                 if (response.data) {
                     this.getEvents()
                     this.clear()
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Evento actualizado correctamente',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
                 }                
             } catch (error) {
                 console.log(error)
@@ -191,6 +209,13 @@ export default {
                 if (response.data) {
                     this.getEvents()
                     this.clear()
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Evento eliminado correctamente',
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
                 } 
             } catch (error) {
                 console.log(error)

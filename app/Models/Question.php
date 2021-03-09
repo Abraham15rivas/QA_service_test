@@ -14,6 +14,7 @@ class Question extends Model
     protected $fillable = [
         'content',
         'status',
+        'participant_data',
         'event_id'
     ];
     // Pertenece a un evento

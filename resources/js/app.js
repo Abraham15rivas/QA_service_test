@@ -16,6 +16,7 @@ Vue.use(VueMaterial)
 // Cargar componentes
 Vue.component('header-component', require('./components/header/headerComponent.vue').default);
 Vue.component('all-event-component', require('./pages/event/allEventComponent').default);
+Vue.component('an-event-component', require('./pages/event/anEventComponent').default);
 // Instancia de vue
 const app = new Vue({
     el: '#app',
