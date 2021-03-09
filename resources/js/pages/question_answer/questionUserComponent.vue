@@ -2,8 +2,8 @@
     <div class="padding container-fluid">
         <div class="row">
             <div class="col m12 s12 mt">
-                <h3 class="center-align"> ¡ Reporte de preguntas denegadas ! </h3>
-                <div v-if="questions.length > 0">
+                <h3 class="center-align" :class="id = getIdUser"> ¡ Mis preguntas ! </h3>
+                <div v-if="validate">
                     <md-table class="mt mb">
                         <md-table-row>
                             <md-table-head md-numeric>ID</md-table-head>
@@ -14,7 +14,7 @@
                             <md-table-head>Participante</md-table-head>
                             <md-table-head>Evento</md-table-head>
                         </md-table-row>
-                        <md-table-row v-for="(question, index) in questions" :key="index">
+                        <md-table-row v-for="(question, index) in my_questions" :key="index">
                             <md-table-cell md-numeric>{{ index + 1 }}</md-table-cell>
                             <md-table-cell>{{ question.created_at.slice(0, 10) }}</md-table-cell>
                             <md-table-cell>{{ question.created_at.slice(11, 19) }}</md-table-cell>
@@ -32,27 +32,36 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex'
 export default {
     data() {
         return {
-            questions: []
+            my_questions: [],
+            validate: false,
+            id: null
         }
     },
     methods: {
-        async getAllQuestions() {
+        async getMyQuestions() {
             try {
-                let url = `/moderator/questions/deneid`
+                let url = `/user/questions/${this.id}`
                 const responses = await axios.get(url)
                 if(responses.data) {
-                    this.questions = responses.data
+                    this.my_questions = responses.data
+                    if(this.my_questions.length > 0) {
+                        this.validate = true
+                    }
                 }
             } catch (error) {
                 console.log(error)
             }
-        }
+        },
+    },
+    computed: {
+        ...mapGetters(['getIdUser'])
     },
     mounted() {
-        this.getAllQuestions()
+        setTimeout(() => this.getMyQuestions(), 1000)
     }
 }
 </script>

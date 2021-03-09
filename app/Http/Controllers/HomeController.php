@@ -37,11 +37,11 @@ class HomeController extends Controller
 
     public function allDenied() {
         $questions = Question::where('status', '=', 'denied')->get();
-        return $questions;
+        return $questions->load('event');
     }
 
     public function allApproved(Event $event) {
-        $event->load(['questions' => function($query) {
+        $event->load(['questions.answer', 'questions' => function($query) {
             return $query->where('status', '=', 'approved')->get();
         }]);
         return $event->questions;
@@ -62,5 +62,19 @@ class HomeController extends Controller
             'event_id' => $request->event_id
         ]);
         return 'ok';
+    }
+
+    public function questionUser($id) {
+        $questions = Question::with('event')->get();
+        $my_questions = collect();
+        $questions->filter(function($question) use($id, $my_questions) {
+            $question_id = json_decode($question->participant_data, true)['user_id'];
+            if($question_id != null) {
+                if($question_id == $id) {
+                    return $my_questions->push($question);
+                }
+            }            
+        });
+        return $my_questions->toJson();
     }
 }

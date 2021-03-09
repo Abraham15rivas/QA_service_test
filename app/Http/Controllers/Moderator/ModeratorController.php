@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Moderator;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
-use App\Models\Event;
+use App\Models\{Event, Question, Answer};
 use Illuminate\Http\Request;
 
 class ModeratorController extends Controller
@@ -59,6 +59,26 @@ class ModeratorController extends Controller
             Storage::disk('public')->delete($event->image);
         }
         $event->delete();
+        return 'ok';
+    }
+
+    public function deniedQuestion(Request $request) {
+        $question = Question::findOrFail($request->id);
+        $question->update([
+            'status' => 'denied'
+        ]);
+        return 'ok';
+    }
+
+    public function answerQuestion(Request $request) {
+        Answer::create([
+            'content' => $request->content,
+            'question_id' => $request->question_id
+        ]);
+        $question = Question::findOrFail($request->question_id);
+        $question->update([
+            'status' => 'approved'
+        ]);
         return 'ok';
     }
 }

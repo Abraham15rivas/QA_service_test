@@ -6,6 +6,7 @@ import createEventComponent from '../pages/event/createEventComponent.vue'
 import anEventComponent from '../pages/event/anEventComponent.vue'
 import indexQAComponent from '../pages/question_answer/indexQAComponent.vue'
 import indexQADeniedComponent from '../pages/report/indexQADeniedComponent.vue'
+import questionUserComponent from '../pages/question_answer/questionUserComponent.vue'
 // asignar
 Vue.use(VueRouter)
 // rutas
@@ -44,6 +45,12 @@ const routes = [
         path: '/report',
         name: 'Report',
         component: indexQADeniedComponent,
+        props: true
+    },
+    {
+        path: '/my-question',
+        name: 'MyQuestion',
+        component: questionUserComponent,
         props: true
     }
 ]

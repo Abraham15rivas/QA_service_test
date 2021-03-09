@@ -30,7 +30,15 @@
                                     <li v-for="(question_approved, index) of questions" :key="index">
                                         <p v-text="`Autor: ${JSON.parse(question_approved.participant_data).email}`"></p>
                                         <p v-text="`Fecha: ${question_approved.created_at.slice(0, 10)}`"></p>
-                                        <p class="text-center" v-text="`Pregunta: ${question_approved.content}`"></p>
+                                        <p v-text="`Hora: ${question_approved.created_at.slice(11, 19)}`"></p>
+                                        <p v-text="`Pregunta: ${question_approved.content}`"></p>
+                                        <span v-if="question_approved.answer != null">
+                                            <div class="text-right">
+                                                <h6>Respuesta del moderador:</h6>
+                                                <blockquote v-text="question_approved.answer.content"></blockquote>
+                                            </div>
+                                        </span>
+                                        <hr>
                                     </li>
                                 </ul>
                             </div>
@@ -84,7 +92,7 @@ export default {
                     Swal.fire({
                         icon: 'error',
                         title: 'Oops...',
-                        text: '¡No puedes preguntar en un evento postedo por tí!',
+                        text: '¡No puedes preguntar en un evento posteada por tí!',
                     })
                     this.question = null
                 }
@@ -130,7 +138,7 @@ export default {
                     content: this.question,
                     participant_data: {
                         email,
-                        id
+                        user_id: id
                     },
                     event_id: this.event_selected.id
                 }
@@ -139,7 +147,7 @@ export default {
                     Swal.fire({
                         position: 'top-end',
                         icon: 'info',
-                        title: 'Pregunta enviada correctamente, está en revisón por el moderador una vez aprovada y respondida se mostrará en la lista ',
+                        title: 'Pregunta enviada correctamente, está en revisón por el moderador una vez aprobada y respondida se mostrará en la lista ',
                         showConfirmButton: false,
                         timer: 5000
                     })
