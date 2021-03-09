@@ -16,13 +16,8 @@ class CreateQuestionsTable extends Migration
         Schema::create('questions', function (Blueprint $table) {
             $table->id();
             $table->text('content');
+            $table->text('participant_data');
             $table->enum('status', ['revision', 'approved', 'denied']);
-            // pertenece a un user
-            $table->foreignId('user_id')
-                ->nullable()
-                ->constrained()
-                ->onUpdate('cascade')
-                ->onDelete('SET NULL');
             // pertenece a un event
             $table->foreignId('event_id')
                 ->constrained()

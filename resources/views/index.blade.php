@@ -1,7 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
-    <all-event-component
+    <an-event-component
+        :event="{{ $event }}"
         user="{{ $check == true ? 'auth' : 'guest' }}"
-    ></all-event-component>
+    ></an-event-component>
 @endsection
