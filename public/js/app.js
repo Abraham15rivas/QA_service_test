@@ -45451,7 +45451,7 @@ var render = function() {
                       _c("label", [_vm._v("Miniatura")]),
                       _vm._v(" "),
                       _c("md-file", {
-                        attrs: { accept: "image/*" },
+                        attrs: { accept: "image/*", required: "" },
                         on: { change: _vm.onFileUpload }
                       })
                     ],

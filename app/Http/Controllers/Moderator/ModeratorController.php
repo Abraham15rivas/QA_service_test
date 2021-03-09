@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 use App\Models\{Event, Question, Answer};
 use Illuminate\Http\Request;
+use App\Http\Requests\EventRequest;
 
 class ModeratorController extends Controller
 {
@@ -14,7 +15,7 @@ class ModeratorController extends Controller
         return $events->toJson();
     }
 
-    public function store(Request $request) {
+    public function store(EventRequest $request) {
         $user = auth()->user();
         $event = new Event();
         $event->title = $request->title;
@@ -32,7 +33,7 @@ class ModeratorController extends Controller
         return 'ok';
     }
 
-    public function update(Event $event, Request $request) {
+    public function update(Event $event, EventRequest $request) {
         $user = auth()->user();
         if($request->hasFile('image')) {
             if($event->image) {

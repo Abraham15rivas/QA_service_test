@@ -19,7 +19,7 @@
                         <textarea class="browser-default" id="despcrition" cols="30" rows="10" v-model="description"></textarea>
                         <md-field>
                             <label>Miniatura</label>
-                            <md-file @change="onFileUpload" accept="image/*"/>
+                            <md-file @change="onFileUpload" accept="image/*" required/>
                         </md-field>
                         <label v-if="image" for="description">Vista previa</label>
                         <img v-if="image" :src="preview" alt="vista previa" width="10%">
