@@ -2481,6 +2481,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       _this5.setUrlVideo();
 
       _this5.urlIframe();
+
+      _this5.getQuestions();
     }, 1000);
 
     if (this.event_selected != undefined && this.event_selected.qa) {

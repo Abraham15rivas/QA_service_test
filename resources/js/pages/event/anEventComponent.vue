@@ -201,6 +201,7 @@ export default {
         setTimeout(() => {
             this.setUrlVideo()
             this.urlIframe()
+            this.getQuestions()
         }, 1000)
         if(this.event_selected != undefined && this.event_selected.qa) {
             this.getQuestions()
