@@ -10,9 +10,9 @@
                     <div class="card-body">
                         <ul v-if="events != null && events.length > 0">
                             <li v-for="(event, index) of events" :key="index">
-                                <p v-text="event.title"></p>
-                                <p v-text="event.slug"></p>
-                                <p v-text="'Miniatura'"></p>
+                                <p v-html="`<b>Título:</b> ${event.title}`"></p>
+                                <p v-html="`<b>Subtitulo:</b> ${event.slug}`"></p>
+                                <p v-html="`<b>Miniatura:</b>`"></p>
                                 <img :src="`/storage/${ event.image }`" alt="" width="20%">
                                 <button @click="redirect(event.id, index)" class="btn btn-success">Ver</button>
                                 <br>

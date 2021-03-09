@@ -44976,15 +44976,19 @@ var render = function() {
                   _vm._l(_vm.events, function(event, index) {
                     return _c("li", { key: index }, [
                       _c("p", {
-                        domProps: { textContent: _vm._s(event.title) }
+                        domProps: {
+                          innerHTML: _vm._s("<b>Título:</b> " + event.title)
+                        }
                       }),
                       _vm._v(" "),
                       _c("p", {
-                        domProps: { textContent: _vm._s(event.slug) }
+                        domProps: {
+                          innerHTML: _vm._s("<b>Subtitulo:</b> " + event.slug)
+                        }
                       }),
                       _vm._v(" "),
                       _c("p", {
-                        domProps: { textContent: _vm._s("Miniatura") }
+                        domProps: { innerHTML: _vm._s("<b>Miniatura:</b>") }
                       }),
                       _vm._v(" "),
                       _c("img", {
@@ -45722,12 +45726,7 @@ var render = function() {
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "row" }, [
-      _c(
-        "div",
-        { staticClass: "col m12 s12 center-align" },
-        [_c("all-event-component")],
-        1
-      )
+      _c("div", { staticClass: "col m12 s12" }, [_c("all-event-component")], 1)
     ])
   ])
 }

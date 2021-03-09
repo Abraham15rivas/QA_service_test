@@ -6,7 +6,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col m12 s12 center-align">
+            <div class="col m12 s12">
                 <all-event-component />
             </div>
         </div>  
