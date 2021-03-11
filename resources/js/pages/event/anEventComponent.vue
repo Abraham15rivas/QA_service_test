@@ -4,12 +4,13 @@
             <div class="col-md-12 mt mb">
                 <div class="card">
                     <div class="card-header text-center backcolor">
-                        <h5>Evento: ¡ {{ event_selected ? event_selected.title : ''}} !</h5>
+                        <h5>Event: ¡ {{ event_selected ? event_selected.title : ''}} !</h5>
                     </div>
                     <div class="card-body">
-                        <h5 v-text="`Título: ${ event_selected ? event_selected.title : '' }`"></h5>
-                        <p v-text="`Subtitulo: ${ event_selected ? event_selected.slug : '' }`"></p>
-                        <p v-text="`Fecha de creación: ${ event_selected ? event_selected.created_at.slice(0, 10) : '' }`"></p>
+                        <h5 v-text="`Title: ${ event_selected ? event_selected.title : '' }`"></h5>
+                        <p v-text="`Subtitle: ${ event_selected ? event_selected.slug : '' }`"></p>
+                        <p v-text="`Creation date: ${ event_selected ? event_selected.created_at.slice(0, 10) : '' }`"></p>
+                        <p v-text="`Creation time: ${ event_selected ? event_selected.created_at.slice(11, 19) : '' }`"></p>
                         <span id="embedA">
                             <iframe
                                 class="mt altura"
@@ -21,20 +22,20 @@
                                 allowfullscreen>
                             </iframe>
                         </span>
-                        <p v-text="`Descripción: ${ event_selected ? event_selected.description : '' }`"></p>
+                        <p v-text="`Description: ${ event_selected ? event_selected.description : '' }`"></p>
                         <span v-if="event_selected != undefined && event_selected.qa">
                             <hr>
-                            <p>Preguntas:</p>
+                            <p>Questions:</p>
                             <div v-if="questions.length > 0">
                                 <ul>
                                     <li v-for="(question_approved, index) of questions" :key="index">
-                                        <p v-text="`Autor: ${JSON.parse(question_approved.participant_data).email}`"></p>
-                                        <p v-text="`Fecha: ${question_approved.created_at.slice(0, 10)}`"></p>
-                                        <p v-text="`Hora: ${question_approved.created_at.slice(11, 19)}`"></p>
-                                        <p v-text="`Pregunta: ${question_approved.content}`"></p>
+                                        <p v-text="`Author: ${JSON.parse(question_approved.participant_data).email}`"></p>
+                                        <p v-text="`Date: ${question_approved.created_at.slice(0, 10)}`"></p>
+                                        <p v-text="`Time: ${question_approved.created_at.slice(11, 19)}`"></p>
+                                        <p v-text="`Question: ${question_approved.content}`"></p>
                                         <span v-if="question_approved.answer != null">
                                             <div class="text-right">
-                                                <h6>Respuesta del moderador:</h6>
+                                                <h6>Moderator answer:</h6>
                                                 <blockquote v-text="question_approved.answer.content"></blockquote>
                                             </div>
                                         </span>
@@ -43,16 +44,16 @@
                                 </ul>
                             </div>
                             <div v-else class="text-center">
-                                <span >
-                                    <b>No hay preguntas para mostrar</b>
+                                <span>
+                                    <b>There are no questions to show</b>
                                 </span>
                             </div>
                             <hr>
                             <form id="form" @submit.prevent="validateQuestion">
-                                <label for="question">Preguntar:</label>
+                                <label for="question">To ask:</label>
                                 <textarea class="browser-default" id="question" cols="30" rows="10" v-model="question"></textarea>
                                 <div class="text-right mt">
-                                    <button type="submit" class="btn green">Preguntar</button>
+                                    <button type="submit" class="btn green">Submit</button>
                                 </div>
                             </form>
                         </span>
@@ -61,7 +62,7 @@
                             <button 
                                 class="btn btn center"
                                 @click="redirect"
-                            >Volver</button>
+                            >Back</button>
                         </router-link>
                     </div>
                 </div>

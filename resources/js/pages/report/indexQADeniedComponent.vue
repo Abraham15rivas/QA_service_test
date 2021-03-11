@@ -2,17 +2,17 @@
     <div class="padding container-fluid">
         <div class="row">
             <div class="col m12 s12 mt">
-                <h3 class="center-align"> ¡ Reporte de preguntas denegadas ! </h3>
+                <h3 class="center-align"> Report Denied Questions ! </h3>
                 <div v-if="questions.length > 0">
                     <md-table class="mt mb">
                         <md-table-row>
                             <md-table-head md-numeric>ID</md-table-head>
-                            <md-table-head>Fecha</md-table-head>
-                            <md-table-head>Hora</md-table-head>
-                            <md-table-head>Pregunta</md-table-head>
+                            <md-table-head>Date</md-table-head>
+                            <md-table-head>Time</md-table-head>
+                            <md-table-head>Question</md-table-head>
                             <md-table-head>Status</md-table-head>
-                            <md-table-head>Participante</md-table-head>
-                            <md-table-head>Evento</md-table-head>
+                            <md-table-head>Participant</md-table-head>
+                            <md-table-head>Event</md-table-head>
                         </md-table-row>
                         <md-table-row v-for="(question, index) in questions" :key="index">
                             <md-table-cell md-numeric>{{ index + 1 }}</md-table-cell>
@@ -25,7 +25,7 @@
                         </md-table-row>
                     </md-table>
                 </div>
-                <h4 class="text-center" v-else>No hay datos para mostrar</h4>
+                <h4 class="text-center" v-else>No data to display</h4>
             </div>
         </div>
     </div>

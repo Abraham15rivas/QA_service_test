@@ -37,7 +37,7 @@
         <li>
           <ul class="collapsible collapsible-accordion">
             <li class="waves-effect">
-              <h5 class="black-text name center">Menú</h5>
+              <h5 class="black-text name center">Menu</h5>
             </li>
             <li class="waves-effect">
               <router-link 
@@ -45,7 +45,7 @@
                 class="collapsible-header" 
                 tabindex="0"
               >
-                Inicio<i class="material-icons">home</i>
+                Home<i class="material-icons">home</i>
               </router-link>
             </li>
             <li class="waves-effect" v-if="getRoleUser == 2">
@@ -54,7 +54,7 @@
                 class="collapsible-header"
                 tabindex="0"
               >
-                Mis preguntas<i class="material-icons">person</i>
+                My questions<i class="material-icons">person</i>
               </router-link>
             </li>
             <li class="waves-effect" v-if="getRoleUser == 1">
@@ -63,7 +63,7 @@
                 class="collapsible-header"
                 tabindex="0"
               >
-                Eventos<i class="material-icons">event_note</i>
+                Events<i class="material-icons">event_note</i>
               </router-link>
             </li>
             <li class="waves-effect" v-if="getRoleUser == 1">
@@ -81,7 +81,7 @@
                 class="collapsible-header"
                 tabindex="0"
               >
-                Reportes<i class="material-icons">description</i>
+                Report<i class="material-icons">description</i>
               </router-link>
             </li>
             <li class="waves-effect" @click="logout">
@@ -90,7 +90,7 @@
                 class="collapsible-header"
                 tabindex="0"
               >
-                Cerrar sesión<i class="material-icons">logout</i>
+                Logout<i class="material-icons">logout</i>
               </router-link>
             </li>
           </ul>

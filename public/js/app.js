@@ -2246,6 +2246,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
@@ -44774,7 +44775,7 @@ var render = function() {
                       attrs: { to: "/", tabindex: "0" }
                     },
                     [
-                      _vm._v("\n              Inicio"),
+                      _vm._v("\n              Home"),
                       _c("i", { staticClass: "material-icons" }, [
                         _vm._v("home")
                       ])
@@ -44796,7 +44797,7 @@ var render = function() {
                           attrs: { to: "/my-question", tabindex: "0" }
                         },
                         [
-                          _vm._v("\n              Mis preguntas"),
+                          _vm._v("\n              My questions"),
                           _c("i", { staticClass: "material-icons" }, [
                             _vm._v("person")
                           ])
@@ -44819,7 +44820,7 @@ var render = function() {
                           attrs: { to: "/event", tabindex: "0" }
                         },
                         [
-                          _vm._v("\n              Eventos"),
+                          _vm._v("\n              Events"),
                           _c("i", { staticClass: "material-icons" }, [
                             _vm._v("event_note")
                           ])
@@ -44865,7 +44866,7 @@ var render = function() {
                           attrs: { to: "/report", tabindex: "0" }
                         },
                         [
-                          _vm._v("\n              Reportes"),
+                          _vm._v("\n              Report"),
                           _c("i", { staticClass: "material-icons" }, [
                             _vm._v("description")
                           ])
@@ -44887,7 +44888,7 @@ var render = function() {
                       attrs: { to: "/", tabindex: "0" }
                     },
                     [
-                      _vm._v("\n              Cerrar sesión"),
+                      _vm._v("\n              Logout"),
                       _c("i", { staticClass: "material-icons" }, [
                         _vm._v("logout")
                       ])
@@ -44937,7 +44938,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("li", { staticClass: "waves-effect" }, [
-      _c("h5", { staticClass: "black-text name center" }, [_vm._v("Menú")])
+      _c("h5", { staticClass: "black-text name center" }, [_vm._v("Menu")])
     ])
   }
 ]
@@ -44977,18 +44978,18 @@ var render = function() {
                     return _c("li", { key: index }, [
                       _c("p", {
                         domProps: {
-                          innerHTML: _vm._s("<b>Título:</b> " + event.title)
+                          innerHTML: _vm._s("<b>Title:</b> " + event.title)
                         }
                       }),
                       _vm._v(" "),
                       _c("p", {
                         domProps: {
-                          innerHTML: _vm._s("<b>Subtitulo:</b> " + event.slug)
+                          innerHTML: _vm._s("<b>SubTitle:</b> " + event.slug)
                         }
                       }),
                       _vm._v(" "),
                       _c("p", {
-                        domProps: { innerHTML: _vm._s("<b>Miniatura:</b>") }
+                        domProps: { innerHTML: _vm._s("<b>Miniature:</b>") }
                       }),
                       _vm._v(" "),
                       _c("img", {
@@ -45009,7 +45010,7 @@ var render = function() {
                             }
                           }
                         },
-                        [_vm._v("Ver")]
+                        [_vm._v("Show")]
                       ),
                       _vm._v(" "),
                       _c("br"),
@@ -45019,7 +45020,7 @@ var render = function() {
                   }),
                   0
                 )
-              : _c("h5", [_c("b", [_vm._v("No hay eventos para mostrar")])])
+              : _c("h5", [_c("b", [_vm._v("There are no events to show")])])
           ])
         ])
       ])
@@ -45032,7 +45033,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "card-header text-center backcolor" }, [
-      _c("h5", [_vm._v("Lista de eventos")])
+      _c("h5", [_vm._v("Event list")])
     ])
   }
 ]
@@ -45065,7 +45066,7 @@ var render = function() {
           _c("div", { staticClass: "card-header text-center backcolor" }, [
             _c("h5", [
               _vm._v(
-                "Evento: ¡ " +
+                "Event: ¡ " +
                   _vm._s(_vm.event_selected ? _vm.event_selected.title : "") +
                   " !"
               )
@@ -45079,7 +45080,7 @@ var render = function() {
               _c("h5", {
                 domProps: {
                   textContent: _vm._s(
-                    "Título: " +
+                    "Title: " +
                       (_vm.event_selected ? _vm.event_selected.title : "")
                   )
                 }
@@ -45088,7 +45089,7 @@ var render = function() {
               _c("p", {
                 domProps: {
                   textContent: _vm._s(
-                    "Subtitulo: " +
+                    "Subtitle: " +
                       (_vm.event_selected ? _vm.event_selected.slug : "")
                   )
                 }
@@ -45097,9 +45098,20 @@ var render = function() {
               _c("p", {
                 domProps: {
                   textContent: _vm._s(
-                    "Fecha de creación: " +
+                    "Creation date: " +
                       (_vm.event_selected
                         ? _vm.event_selected.created_at.slice(0, 10)
+                        : "")
+                  )
+                }
+              }),
+              _vm._v(" "),
+              _c("p", {
+                domProps: {
+                  textContent: _vm._s(
+                    "Creation time: " +
+                      (_vm.event_selected
+                        ? _vm.event_selected.created_at.slice(11, 19)
                         : "")
                   )
                 }
@@ -45110,7 +45122,7 @@ var render = function() {
               _c("p", {
                 domProps: {
                   textContent: _vm._s(
-                    "Descripción: " +
+                    "Description: " +
                       (_vm.event_selected ? _vm.event_selected.description : "")
                   )
                 }
@@ -45120,7 +45132,7 @@ var render = function() {
                 ? _c("span", [
                     _c("hr"),
                     _vm._v(" "),
-                    _c("p", [_vm._v("Preguntas:")]),
+                    _c("p", [_vm._v("Questions:")]),
                     _vm._v(" "),
                     _vm.questions.length > 0
                       ? _c("div", [
@@ -45134,7 +45146,7 @@ var render = function() {
                                 _c("p", {
                                   domProps: {
                                     textContent: _vm._s(
-                                      "Autor: " +
+                                      "Author: " +
                                         JSON.parse(
                                           question_approved.participant_data
                                         ).email
@@ -45145,7 +45157,7 @@ var render = function() {
                                 _c("p", {
                                   domProps: {
                                     textContent: _vm._s(
-                                      "Fecha: " +
+                                      "Date: " +
                                         question_approved.created_at.slice(
                                           0,
                                           10
@@ -45157,7 +45169,7 @@ var render = function() {
                                 _c("p", {
                                   domProps: {
                                     textContent: _vm._s(
-                                      "Hora: " +
+                                      "Time: " +
                                         question_approved.created_at.slice(
                                           11,
                                           19
@@ -45169,7 +45181,7 @@ var render = function() {
                                 _c("p", {
                                   domProps: {
                                     textContent: _vm._s(
-                                      "Pregunta: " + question_approved.content
+                                      "Question: " + question_approved.content
                                     )
                                   }
                                 }),
@@ -45177,9 +45189,7 @@ var render = function() {
                                 question_approved.answer != null
                                   ? _c("span", [
                                       _c("div", { staticClass: "text-right" }, [
-                                        _c("h6", [
-                                          _vm._v("Respuesta del moderador:")
-                                        ]),
+                                        _c("h6", [_vm._v("Moderator answer:")]),
                                         _vm._v(" "),
                                         _c("blockquote", {
                                           domProps: {
@@ -45215,7 +45225,7 @@ var render = function() {
                       },
                       [
                         _c("label", { attrs: { for: "question" } }, [
-                          _vm._v("Preguntar:")
+                          _vm._v("To ask:")
                         ]),
                         _vm._v(" "),
                         _c("textarea", {
@@ -45255,7 +45265,7 @@ var render = function() {
                     staticClass: "btn btn center",
                     on: { click: _vm.redirect }
                   },
-                  [_vm._v("Volver")]
+                  [_vm._v("Back")]
                 )
               ])
             ],
@@ -45290,7 +45300,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("span", [_c("b", [_vm._v("No hay preguntas para mostrar")])])
+    return _c("span", [_c("b", [_vm._v("There are no questions to show")])])
   },
   function() {
     var _vm = this
@@ -45298,7 +45308,7 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "text-right mt" }, [
       _c("button", { staticClass: "btn green", attrs: { type: "submit" } }, [
-        _vm._v("Preguntar")
+        _vm._v("Submit")
       ])
     ])
   }
@@ -45329,7 +45339,7 @@ var render = function() {
     _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col m12 s12 mt" }, [
         _c("h3", { staticClass: "center-align" }, [
-          _vm._v(" ¡ Gestionar eventos ! ")
+          _vm._v(" Manage events ! ")
         ]),
         _vm._v(" "),
         !_vm.form
@@ -45375,7 +45385,7 @@ var render = function() {
                   }
                 },
                 [
-                  _c("label", { attrs: { for: "title" } }, [_vm._v("Título")]),
+                  _c("label", { attrs: { for: "title" } }, [_vm._v("Title")]),
                   _vm._v(" "),
                   _c("input", {
                     directives: [
@@ -45424,7 +45434,7 @@ var render = function() {
                   }),
                   _vm._v(" "),
                   _c("label", { attrs: { for: "description" } }, [
-                    _vm._v("Descripcción")
+                    _vm._v("Description")
                   ]),
                   _vm._v(" "),
                   _c("textarea", {
@@ -45452,7 +45462,7 @@ var render = function() {
                   _c(
                     "md-field",
                     [
-                      _c("label", [_vm._v("Miniatura")]),
+                      _c("label", [_vm._v("Miniature")]),
                       _vm._v(" "),
                       _c("md-file", {
                         attrs: { accept: "image/*", required: "" },
@@ -45464,7 +45474,7 @@ var render = function() {
                   _vm._v(" "),
                   _vm.image
                     ? _c("label", { attrs: { for: "description" } }, [
-                        _vm._v("Vista previa")
+                        _vm._v("Preview")
                       ])
                     : _vm._e(),
                   _vm._v(" "),
@@ -45481,7 +45491,7 @@ var render = function() {
                   _c("br"),
                   _vm._v(" "),
                   _c("label", { attrs: { for: "video" } }, [
-                    _vm._v("Url Vídeo")
+                    _vm._v("Video url")
                   ]),
                   _vm._v(" "),
                   _c("input", {
@@ -45507,7 +45517,7 @@ var render = function() {
                   }),
                   _vm._v(" "),
                   _c("label", { attrs: { for: "category" } }, [
-                    _vm._v("Opciones")
+                    _vm._v("Options")
                   ]),
                   _vm._v(" "),
                   _c(
@@ -45524,7 +45534,7 @@ var render = function() {
                             expression: "qa"
                           }
                         },
-                        [_vm._v("Permitir preguntas")]
+                        [_vm._v("Allow questions")]
                       ),
                       _vm._v(" "),
                       _c(
@@ -45538,7 +45548,7 @@ var render = function() {
                             expression: "status"
                           }
                         },
-                        [_vm._v("Publicar")]
+                        [_vm._v("To post")]
                       )
                     ],
                     1
@@ -45546,7 +45556,7 @@ var render = function() {
                   _vm._v(" "),
                   _vm.form && !_vm.edit
                     ? _c("button", { staticClass: "btn center-align green" }, [
-                        _vm._v("Enviar")
+                        _vm._v("Submit")
                       ])
                     : _vm._e()
                 ],
@@ -45561,7 +45571,7 @@ var render = function() {
                       attrs: { type: "buttton" },
                       on: { click: _vm.putEvent }
                     },
-                    [_vm._v("Guardar")]
+                    [_vm._v("Save")]
                   )
                 : _vm._e()
             ])
@@ -45582,21 +45592,21 @@ var render = function() {
                               [_vm._v("ID")]
                             ),
                             _vm._v(" "),
-                            _c("md-table-head", [_vm._v("Titulo")]),
+                            _c("md-table-head", [_vm._v("Title")]),
                             _vm._v(" "),
                             _c("md-table-head", [_vm._v("Slug")]),
                             _vm._v(" "),
-                            _c("md-table-head", [_vm._v("Descripcción")]),
+                            _c("md-table-head", [_vm._v("Description")]),
                             _vm._v(" "),
-                            _c("md-table-head", [_vm._v("Miniatura")]),
+                            _c("md-table-head", [_vm._v("Miniature")]),
                             _vm._v(" "),
-                            _c("md-table-head", [_vm._v("Vídeo")]),
+                            _c("md-table-head", [_vm._v("Video")]),
                             _vm._v(" "),
-                            _c("md-table-head", [_vm._v("Permitir preguntas")]),
+                            _c("md-table-head", [_vm._v("Allow questions")]),
                             _vm._v(" "),
-                            _c("md-table-head", [_vm._v("Publicar")]),
+                            _c("md-table-head", [_vm._v("To post")]),
                             _vm._v(" "),
-                            _c("md-table-head", [_vm._v("Acciones")])
+                            _c("md-table-head", [_vm._v("Actions")])
                           ],
                           1
                         ),
@@ -45656,7 +45666,7 @@ var render = function() {
                                       }
                                     }
                                   },
-                                  [_vm._v("Editar")]
+                                  [_vm._v("Edit")]
                                 ),
                                 _vm._v(" "),
                                 _c(
@@ -45669,7 +45679,7 @@ var render = function() {
                                       }
                                     }
                                   },
-                                  [_vm._v("Eliminar")]
+                                  [_vm._v("Delete")]
                                 )
                               ])
                             ],
@@ -45680,7 +45690,7 @@ var render = function() {
                       2
                     )
                   : _c("h4", { staticClass: "text-center" }, [
-                      _vm._v("No hay datos para mostrar")
+                      _vm._v("No data to display")
                     ])
               ],
               1
@@ -45717,9 +45727,7 @@ var render = function() {
       _c("div", { staticClass: "col m12 s12 mt" }, [
         _c("h3", { staticClass: "center-align" }, [
           _vm._v(
-            " ¡ Bienvenido ! " +
-              _vm._s(_vm.getNameUser ? _vm.getNameUser : "") +
-              " "
+            " Welcome ! " + _vm._s(_vm.getNameUser ? _vm.getNameUser : "") + " "
           )
         ])
       ])
@@ -45757,7 +45765,7 @@ var render = function() {
     _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col m12 s12 mt" }, [
         _c("h3", { staticClass: "center-align" }, [
-          _vm._v(" ¡ Gestionar preguntas ! ")
+          _vm._v(" Manage Questions ! ")
         ]),
         _vm._v(" "),
         _vm.questions.length > 0
@@ -45775,19 +45783,19 @@ var render = function() {
                           _vm._v("ID")
                         ]),
                         _vm._v(" "),
-                        _c("md-table-head", [_vm._v("Fecha")]),
+                        _c("md-table-head", [_vm._v("Date")]),
                         _vm._v(" "),
-                        _c("md-table-head", [_vm._v("Hora")]),
+                        _c("md-table-head", [_vm._v("Time")]),
                         _vm._v(" "),
-                        _c("md-table-head", [_vm._v("Pregunta")]),
+                        _c("md-table-head", [_vm._v("Question")]),
                         _vm._v(" "),
                         _c("md-table-head", [_vm._v("Status")]),
                         _vm._v(" "),
-                        _c("md-table-head", [_vm._v("Participante")]),
+                        _c("md-table-head", [_vm._v("Participant")]),
                         _vm._v(" "),
-                        _c("md-table-head", [_vm._v("Evento")]),
+                        _c("md-table-head", [_vm._v("Event")]),
                         _vm._v(" "),
-                        _c("md-table-head", [_vm._v("Acciones")])
+                        _c("md-table-head", [_vm._v("Actions")])
                       ],
                       1
                     ),
@@ -45844,7 +45852,7 @@ var render = function() {
                                       }
                                     }
                                   },
-                                  [_vm._v("Aprobar")]
+                                  [_vm._v("Pass")]
                                 ),
                                 _vm._v(" "),
                                 _c(
@@ -45857,7 +45865,7 @@ var render = function() {
                                       }
                                     }
                                   },
-                                  [_vm._v("Denegar")]
+                                  [_vm._v("Deny")]
                                 )
                               ])
                             : _c("md-table-cell", [
@@ -45870,8 +45878,8 @@ var render = function() {
                                   domProps: {
                                     textContent: _vm._s(
                                       question.status == "approved"
-                                        ? "Aprobada"
-                                        : "Denegada"
+                                        ? "Approved"
+                                        : "Denied"
                                     )
                                   }
                                 })
@@ -45887,7 +45895,7 @@ var render = function() {
               1
             )
           : _c("h4", { staticClass: "text-center" }, [
-              _vm._v("No hay datos para mostrar")
+              _vm._v("No data to display")
             ])
       ])
     ])
@@ -45922,7 +45930,7 @@ var render = function() {
         _c(
           "h3",
           { staticClass: "center-align", class: (_vm.id = _vm.getIdUser) },
-          [_vm._v(" ¡ Mis preguntas ! ")]
+          [_vm._v(" My questions ! ")]
         ),
         _vm._v(" "),
         _vm.validate
@@ -45940,17 +45948,17 @@ var render = function() {
                           _vm._v("ID")
                         ]),
                         _vm._v(" "),
-                        _c("md-table-head", [_vm._v("Fecha")]),
+                        _c("md-table-head", [_vm._v("Date")]),
                         _vm._v(" "),
-                        _c("md-table-head", [_vm._v("Hora")]),
+                        _c("md-table-head", [_vm._v("Time")]),
                         _vm._v(" "),
-                        _c("md-table-head", [_vm._v("Pregunta")]),
+                        _c("md-table-head", [_vm._v("Question")]),
                         _vm._v(" "),
                         _c("md-table-head", [_vm._v("Status")]),
                         _vm._v(" "),
-                        _c("md-table-head", [_vm._v("Participante")]),
+                        _c("md-table-head", [_vm._v("Participant")]),
                         _vm._v(" "),
-                        _c("md-table-head", [_vm._v("Evento")])
+                        _c("md-table-head", [_vm._v("Event")])
                       ],
                       1
                     ),
@@ -46002,7 +46010,7 @@ var render = function() {
               1
             )
           : _c("h4", { staticClass: "text-center" }, [
-              _vm._v("No hay datos para mostrar")
+              _vm._v("No data to display")
             ])
       ])
     ])
@@ -46035,7 +46043,7 @@ var render = function() {
     _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col m12 s12 mt" }, [
         _c("h3", { staticClass: "center-align" }, [
-          _vm._v(" ¡ Reporte de preguntas denegadas ! ")
+          _vm._v(" Report Denied Questions ! ")
         ]),
         _vm._v(" "),
         _vm.questions.length > 0
@@ -46053,17 +46061,17 @@ var render = function() {
                           _vm._v("ID")
                         ]),
                         _vm._v(" "),
-                        _c("md-table-head", [_vm._v("Fecha")]),
+                        _c("md-table-head", [_vm._v("Date")]),
                         _vm._v(" "),
-                        _c("md-table-head", [_vm._v("Hora")]),
+                        _c("md-table-head", [_vm._v("Time")]),
                         _vm._v(" "),
-                        _c("md-table-head", [_vm._v("Pregunta")]),
+                        _c("md-table-head", [_vm._v("Question")]),
                         _vm._v(" "),
                         _c("md-table-head", [_vm._v("Status")]),
                         _vm._v(" "),
-                        _c("md-table-head", [_vm._v("Participante")]),
+                        _c("md-table-head", [_vm._v("Participant")]),
                         _vm._v(" "),
-                        _c("md-table-head", [_vm._v("Evento")])
+                        _c("md-table-head", [_vm._v("Event")])
                       ],
                       1
                     ),
@@ -46115,7 +46123,7 @@ var render = function() {
               1
             )
           : _c("h4", { staticClass: "text-center" }, [
-              _vm._v("No hay datos para mostrar")
+              _vm._v("No data to display")
             ])
       ])
     ])

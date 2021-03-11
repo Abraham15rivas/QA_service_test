@@ -4,23 +4,23 @@
             <div class="col-md-12 mt mb">
                 <div class="card">
                     <div class="card-header text-center backcolor">
-                        <h5>Lista de eventos</h5>
+                        <h5>Event list</h5>
                     </div>
 
                     <div class="card-body">
                         <ul v-if="events != null && events.length > 0">
                             <li v-for="(event, index) of events" :key="index">
-                                <p v-html="`<b>Título:</b> ${event.title}`"></p>
-                                <p v-html="`<b>Subtitulo:</b> ${event.slug}`"></p>
-                                <p v-html="`<b>Miniatura:</b>`"></p>
+                                <p v-html="`<b>Title:</b> ${event.title}`"></p>
+                                <p v-html="`<b>SubTitle:</b> ${event.slug}`"></p>
+                                <p v-html="`<b>Miniature:</b>`"></p>
                                 <img :src="`/storage/${ event.image }`" alt="" width="20%">
-                                <button @click="redirect(event.id, index)" class="btn btn-success">Ver</button>
+                                <button @click="redirect(event.id, index)" class="btn btn-success">Show</button>
                                 <br>
                                 <hr>
                             </li>
                         </ul>
                         <h5 v-else>
-                            <b>No hay eventos para mostrar</b>
+                            <b>There are no events to show</b>
                         </h5>
                     </div>
                 </div>

@@ -2,7 +2,7 @@
     <div class="padding">
         <div class="row">
             <div class="col m12 s12 mt">
-                <h3 class="center-align" > ¡ Bienvenido ! {{ getNameUser ? getNameUser : "" }} </h3>
+                <h3 class="center-align" > Welcome ! {{ getNameUser ? getNameUser : "" }} </h3>
             </div>
         </div>
         <div class="row">

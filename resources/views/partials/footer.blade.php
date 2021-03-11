@@ -7,7 +7,7 @@
         </div>
         <div>
             <h6>
-                Desarrollado by: @abraham.r.j
+                Developed by: @abraham.r.j
             </h6>
         </div>
     </footer>
