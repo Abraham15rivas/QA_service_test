@@ -93,7 +93,7 @@ export default {
                     Swal.fire({
                         icon: 'error',
                         title: 'Oops...',
-                        text: '¡No puedes preguntar en un evento posteada por tí!',
+                        text: 'You cannot ask in an event posted by you!',
                     })
                     this.question = null
                 }
@@ -109,25 +109,25 @@ export default {
                 Swal.fire({
                     icon: 'info',
                     title: 'Oops...',
-                    text: '¡No puedes estar vacío!',
+                    text: `You can't be empty!`,
                 })
                 this.question = null
             }
         },
         async setWithEmail() {
             const { value: email } = await Swal.fire({
-                title: '¡ Hey primero considerar lo siguiente !',
-                html: ` <p>¡Debes registrate, iniciar sesión o enviar tu pregunta con tú correo!</p>
+                title: 'Hey first consider the following !',
+                html: ` <p>You must register, log in or send your question with your email!</p>
                         <br>
                         <a href="/login">Login</a>
                         <br>
-                        <a href="/register">Registrate</a>`,
+                        <a href="/register">Sign up</a>`,
                 input: 'email',
-                inputLabel: 'Tu correo electrónico',
-                inputPlaceholder: 'Ingrese su dirección de correo electrónico'
+                inputLabel: 'your e-mail',
+                inputPlaceholder: 'Enter your email address'
             })
             if (email) {
-                Swal.fire(`Ingresó email: ${email}`)
+                Swal.fire(`Enter email: ${email}`)
                 this.email_participant = email
                 this.setQuestion(email, null)
             }
@@ -148,7 +148,7 @@ export default {
                     Swal.fire({
                         position: 'top-end',
                         icon: 'info',
-                        title: 'Pregunta enviada correctamente, está en revisón por el moderador una vez aprobada y respondida se mostrará en la lista ',
+                        title: 'Question sent correctly, it is in review by the moderator once approved and answered it will be shown in the list',
                         showConfirmButton: false,
                         timer: 5000
                     })

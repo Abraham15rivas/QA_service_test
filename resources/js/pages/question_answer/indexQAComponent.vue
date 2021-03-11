@@ -73,7 +73,7 @@ export default {
                     Swal.fire({
                         position: 'top-end',
                         icon: 'success',
-                        title: 'Pregunta denegada correctamente',
+                        title: 'Question successfully denied',
                         showConfirmButton: false,
                         timer: 1500
                     })
@@ -95,7 +95,7 @@ export default {
                     Swal.fire({
                         position: 'top-end',
                         icon: 'success',
-                        title: 'Pregunta respondida correctamente',
+                        title: 'Question answered correctly',
                         showConfirmButton: false,
                         timer: 1500
                     })
@@ -107,14 +107,14 @@ export default {
         },
         async approvedQuestion(question_id, content) {
             const { value: response } = await Swal.fire({
-                title: '¡ Responder a pregunta !',
+                title: 'Answer question !',
                 html: `<p>${content}</p>`,
                 input: 'text',
-                inputLabel: 'Tu respuesta: ',
-                inputPlaceholder: 'Ingrese una respuesta aquí'
+                inputLabel: 'Your answer: ',
+                inputPlaceholder: 'Enter an answer here'
             })
             if (response) {
-                Swal.fire(`Ingresó esta respuesta: ${response}`)
+                Swal.fire(`You entered this answer: ${response}`)
                 this.setAnswerQuestion(response, question_id)
             }
         },

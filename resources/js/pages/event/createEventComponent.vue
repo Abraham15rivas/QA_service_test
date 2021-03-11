@@ -165,7 +165,7 @@ export default {
                     Swal.fire({
                         position: 'top-end',
                         icon: 'success',
-                        title: 'Evento guardado correctamente',
+                        title: 'Event successfully saved',
                         showConfirmButton: false,
                         timer: 1500
                     })
@@ -193,7 +193,7 @@ export default {
                     Swal.fire({
                         position: 'top-end',
                         icon: 'success',
-                        title: 'Evento actualizado correctamente',
+                        title: 'Event successfully updated',
                         showConfirmButton: false,
                         timer: 1500
                     })
@@ -212,7 +212,7 @@ export default {
                     Swal.fire({
                         position: 'top-end',
                         icon: 'success',
-                        title: 'Evento eliminado correctamente',
+                        title: 'Event removed successfully',
                         showConfirmButton: false,
                         timer: 1500
                     })

@@ -2268,7 +2268,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
             icon: 'error',
             title: 'Oops...',
-            text: '¡No puedes preguntar en un evento posteada por tí!'
+            text: 'You cannot ask in an event posted by you!'
           });
           this.question = null;
         }
@@ -2286,7 +2286,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
           icon: 'info',
           title: 'Oops...',
-          text: '¡No puedes estar vacío!'
+          text: "You can't be empty!"
         });
         this.question = null;
       }
@@ -2303,11 +2303,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               case 0:
                 _context.next = 2;
                 return sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                  title: '¡ Hey primero considerar lo siguiente !',
-                  html: " <p>\xA1Debes registrate, iniciar sesi\xF3n o enviar tu pregunta con t\xFA correo!</p>\n                        <br>\n                        <a href=\"/login\">Login</a>\n                        <br>\n                        <a href=\"/register\">Registrate</a>",
+                  title: 'Hey first consider the following !',
+                  html: " <p>You must register, log in or send your question with your email!</p>\n                        <br>\n                        <a href=\"/login\">Login</a>\n                        <br>\n                        <a href=\"/register\">Sign up</a>",
                   input: 'email',
-                  inputLabel: 'Tu correo electrónico',
-                  inputPlaceholder: 'Ingrese su dirección de correo electrónico'
+                  inputLabel: 'your e-mail',
+                  inputPlaceholder: 'Enter your email address'
                 });
 
               case 2:
@@ -2315,7 +2315,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 email = _yield$Swal$fire.value;
 
                 if (email) {
-                  sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire("Ingres\xF3 email: ".concat(email));
+                  sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire("Enter email: ".concat(email));
                   _this.email_participant = email;
 
                   _this.setQuestion(email, null);
@@ -2358,7 +2358,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                     position: 'top-end',
                     icon: 'info',
-                    title: 'Pregunta enviada correctamente, está en revisón por el moderador una vez aprobada y respondida se mostrará en la lista ',
+                    title: 'Question sent correctly, it is in review by the moderator once approved and answered it will be shown in the list',
                     showConfirmButton: false,
                     timer: 5000
                   });
@@ -2722,7 +2722,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                     position: 'top-end',
                     icon: 'success',
-                    title: 'Evento guardado correctamente',
+                    title: 'Event successfully saved',
                     showConfirmButton: false,
                     timer: 1500
                   });
@@ -2777,7 +2777,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                     position: 'top-end',
                     icon: 'success',
-                    title: 'Evento actualizado correctamente',
+                    title: 'Event successfully updated',
                     showConfirmButton: false,
                     timer: 1500
                   });
@@ -2824,7 +2824,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                     position: 'top-end',
                     icon: 'success',
-                    title: 'Evento eliminado correctamente',
+                    title: 'Event removed successfully',
                     showConfirmButton: false,
                     timer: 1500
                   });
@@ -3042,7 +3042,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                     position: 'top-end',
                     icon: 'success',
-                    title: 'Pregunta denegada correctamente',
+                    title: 'Question successfully denied',
                     showConfirmButton: false,
                     timer: 1500
                   });
@@ -3091,7 +3091,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
                     position: 'top-end',
                     icon: 'success',
-                    title: 'Pregunta respondida correctamente',
+                    title: 'Question answered correctly',
                     showConfirmButton: false,
                     timer: 1500
                   });
@@ -3127,11 +3127,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
               case 0:
                 _context4.next = 2;
                 return sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire({
-                  title: '¡ Responder a pregunta !',
+                  title: 'Answer question !',
                   html: "<p>".concat(content, "</p>"),
                   input: 'text',
-                  inputLabel: 'Tu respuesta: ',
-                  inputPlaceholder: 'Ingrese una respuesta aquí'
+                  inputLabel: 'Your answer: ',
+                  inputPlaceholder: 'Enter an answer here'
                 });
 
               case 2:
@@ -3139,7 +3139,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 response = _yield$Swal$fire.value;
 
                 if (response) {
-                  sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire("Ingres\xF3 esta respuesta: ".concat(response));
+                  sweetalert2__WEBPACK_IMPORTED_MODULE_1___default().fire("You entered this answer: ".concat(response));
 
                   _this4.setAnswerQuestion(response, question_id);
                 }
